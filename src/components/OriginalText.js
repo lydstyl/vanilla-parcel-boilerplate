@@ -1,14 +1,24 @@
 const OriginalText = () => {
-  const template = `
-  <label for="story">Votre texte original:</label>
+  const label = document.createElement('label');
+  const labelTextNode = document.createTextNode('Votre texte original:');
+  label.appendChild(labelTextNode);
 
-  <textarea id="story" name="story" rows="5" cols="33">
-    Salut, je suis un text qui va être remplacé plusieurs fois et je vais t'aider à trouver le bon algo....
-  </textarea
-  >
-  `;
+  const textarea = document.createElement('textarea');
+  const textNode = document.createTextNode(
+    "Salut, je suis un texte qui va être remplacé plusieurs fois et je vais t'aider à trouver le bon algo...."
+  );
+  textarea.appendChild(textNode);
+  textarea.addEventListener('change', (e) => {
+    console.log(e.target.value);
+  });
 
-  return template;
+  const originalText = document.createElement('div');
+  originalText.setAttribute('id', 'original-text');
+
+  originalText.appendChild(label);
+  originalText.appendChild(textarea);
+
+  return originalText;
 };
 
 export default OriginalText;

@@ -1,15 +1,18 @@
 // import User from './components/User';
 import Header from './components/Header';
 import OriginalText from './components/OriginalText';
+import ReplacementsBox from './components/ReplacementsBox';
 import './scss/app.scss';
 
 const app = async () => {
-  document.getElementById('header').innerHTML = Header();
-  // document.getElementById('user').innerHTML = await User();
-  document.getElementById('original-text').innerHTML = OriginalText();
+  const appParts = [Header, OriginalText, ReplacementsBox];
+
+  const container = document.querySelector('.container');
+
+  appParts.forEach((part) => {
+    container.appendChild(part());
+  });
 };
 
 // Load app
 app();
-
-console.log('yoo');
