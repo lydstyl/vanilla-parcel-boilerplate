@@ -1,12 +1,13 @@
 const Header = () => {
-	const template = `
+  const template = `
     <header>
-      <h1>My Parcel App</h1>
-      <p>This is a boilerplate for a simple vanilla JS workflow using the Parcel bundler.</p>
+      <h1>REplacer</h1>
+      <p>Permet de programmer de mutliples remplacements, avec ou sans expression régulière, d'un texte original.</p>
+      <p>Cette web app est réalisé à partir d'un boilerplate utilisant le bundler Parcel pour un workflow en vanilla JS.</p>
     </header>
   `;
 
-	return template;
+  return template;
 };
 
 export default Header;
